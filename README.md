@@ -26,14 +26,14 @@ command_line:
       name: Preço KWh 
       command: "/config/shell_scripts/tarifa.py"
       unit_of_measurement: "R$"
-      scan_interval: 0
+      scan_interval: 86400
   - sensor:
       name: Bandeira Tarifaria
       json_attributes:
         - valor 
       command: "/config/shell_scripts/bandeira.py"
       value_template: "{{ value_json.bandeira }}"
-      scan_interval: 0
+      scan_interval: 86400
 
 automation:
   - alias: "Atualizar bandeira e tarifa"
