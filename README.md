@@ -26,10 +26,27 @@ command_line:
       name: Preço KWh 
       command: "/config/shell_scripts/tarifa.py"
       unit_of_measurement: "R$"
+      scan_interval: 0
   - sensor:
       name: Bandeira Tarifaria
       json_attributes:
         - valor 
       command: "/config/shell_scripts/bandeira.py"
       value_template: "{{ value_json.bandeira }}"
+      scan_interval: 0
+
+automation:
+  - alias: "Atualizar bandeira e tarifa"
+    trigger:
+      - platform: time
+        at: "08:00:00"
+    action:
+      - service: homeassistant.update_entity
+        target:
+          entity_id: 
+            - sensor.bandeira_tarifaria
+            - sensor.preco_kwh
+
 `````
+
+Como essas valores mudam com pouca frequencia, recomendo que ou seja usando um "scan_interval" alto, ou que se desabilite o scan automatico e se crie uma automação para atualizar o valor uma vez por dia, como no exemplo acima. 
