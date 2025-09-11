@@ -1,5 +1,5 @@
 # tarifa-energia-br
-Scripts python para buscar o valor da tarifa de energia da base de dados da aneel. Para a versão no formato integração vá para: https://github.com/vodikus/ha_tarifas_energia_brasil[integração ha_tarifas_energia_brasil].
+Scripts python para buscar o valor da tarifa de energia da base de dados da aneel. Para a versão no formato integração vá para: https://github.com/vodikus/ha_tarifas_energia_brasil [integração ha_tarifas_energia_brasil].
 
 ## Introdução
 
